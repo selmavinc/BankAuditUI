@@ -1,0 +1,144 @@
+
+    <!-- <div class="form-outline mb-4">
+    <h2 id="LoginHeading"> Login</h2>
+  </div> -->
+  <form [formGroup]="loginForm" novalidate>
+    <div class="container">
+      <!-- <div class="border border-secondary"> -->
+        <div class="row">
+          <div class="col">
+
+          </div>
+          <div class="col border" style="padding-top: 3%;border-radius: 5px;background-color: lightsteelblue;">
+            <div class="row">
+              <!-- <div class="col-md-4"></div> -->
+              <div class="col text-center">
+                <h1 id="LoginHeading" style="font-weight: bold;color: steelblue;font-style: italic;text-align: center;font-family: initial;"> LOGIN</h1>
+              </div>
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+            <br/>
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                <input type="text" id="usernameC" class="form-control" formControlName="UserName" [(ngModel)]="usernameC"  placeholder="UserName"  />
+                  <div *ngIf="loginForm.controls['UserName'].invalid && !isValidFormSubmitted">
+                    <!-- <br/> -->
+                    <div *ngIf="loginForm.controls['UserName'].errors?.['required']" style="color: red;">
+                    *Username cannot be empty
+                    </div>         
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+
+            </div>
+            <br/>
+
+            <div class="row">
+              <!-- <div class="col-md-4"></div> -->
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                <input type="password" id="passwordC" class="form-control" formControlName="PassWord" [(ngModel)]="passwordC"  placeholder="Password" />
+  
+                <div *ngIf="loginForm.controls['PassWord'].invalid && !isValidFormSubmitted">
+                  <!-- <br/> -->
+                  <div *ngIf="loginForm.controls['PassWord'].errors?.['required']" style="color: red;">
+                  *Password cannot be empty
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+
+            <!-- <br/> -->
+
+            <div class="row">
+              <!-- <div class="col-md-4"></div> -->
+              <div class="col text-center">
+                <button type="button" id="btnsubmit" style="margin-top: 15px;font-weight: bold;" class="btn btn-secondary btn-block mb-4" (click)="login()">Sign in</button>
+              </div>
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+            
+          </div>
+          <div class="col">
+            
+          </div>
+        </div>
+      
+    <!-- <div class="row">
+      <div class="col-md-4">
+      
+      </div>
+      <div class="col-md-4">
+        <h2 id="LoginHeading" style="font-weight: bold;text-align: center;"> LOGIN</h2>
+      </div>
+      <div class="col-md-4">
+      
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+      
+      </div>
+      <div class="col-md-4">
+       
+        <input type="text" id="userName" class="form-control" formControlName="UserName" [(ngModel)]="usernameC"  placeholder="UserName"  />
+        <div *ngIf="loginForm.controls['UserName'].invalid && !isValidFormSubmitted">
+          <div *ngIf="loginForm.controls['UserName'].errors?.['required']" class="alert alert-danger">
+          Username is required
+        </div>
+      
+      </div>
+      </div>
+      <div class="col-md-4">
+      
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-md-4">
+      
+      </div>
+      <div class="col-md-4">
+        
+          <input type="password" id="form2Example2" class="form-control" formControlName="PassWord" [(ngModel)]="passwordC"  placeholder="Password" />
+  
+          <div *ngIf="loginForm.controls['PassWord'].invalid && !isValidFormSubmitted">
+            <div *ngIf="loginForm.controls['PassWord'].errors?.['required']" class="alert alert-danger">
+            Password is required
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+      
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-4">
+      
+      </div>
+      <div class="col-md-4">
+        <button type="button" style="margin-top: 15px;" class="btn btn-primary btn-block mb-4" (click)="login()">Sign in</button>
+      </div>
+      <div class="col-md-4">
+      
+      </div>
+    </div> -->
+
+  <!-- </div> -->
+
+
+    </div>
+  
+  </form>
+      
+      
+    
+    

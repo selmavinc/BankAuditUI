@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col" style="text-align: right!important;">
+            <button type="button" class="btn btn-info" [routerLink]="['/createexaminer']">ADD EXAMINER</button>
+         </div>
+    </div>
+    <div class="row">
+        <caption class="text-center" style="font-weight: bold;font-size: xx-large;">EXAMINERS</caption>
+        <div class="table-responsive">
+        <!-- <table class="table table-striped table-bordered"> -->
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr class="table-primary text-center">
+                    <th scope="col">Name</th>
+                    <th scope="col">Username </th>
+                    <th scope="col">Hours Assigned </th>                   
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let examiner of resResult" scope="row" class="text-center">
+                    <!-- <td>
+                       
+                        <button type="button" class="btn btn-info" 
+                        (click)="EnableClick(auidt)"
+                        data-backdrop="static" data-keyboard="false">{{ auidt.branchId}}</button>
+                      
+                    </td> -->
+                    <td [ngClass]="[ examiner.isActive ? 'btn-default' : 'table-danger']">{{ examiner.name}}</td>
+                    <td [ngClass]="[ examiner.isActive ? 'btn-default' : 'table-danger']">{{ examiner.username}}</td>
+                    <td [ngClass]="[ examiner.isActive ? 'btn-default' : 'table-danger']">{{ examiner.hoursAssigned}}</td>
+                    <td [ngClass]="[ examiner.isActive ? 'btn-default' : 'table-danger']">
+                        <div *ngIf="examiner.isActive == false " >
+                        <button type="button" class="btn btn-outline-danger" 
+                        (click)="DisableClick(examiner)"
+                        data-backdrop="static" data-keyboard="false">Inactive</button>
+                        </div>
+                        <div *ngIf="examiner.isActive == true " >
+                            <button type="button" class="btn btn-outline-success" 
+                            (click)="EnableClick(examiner)"
+                            data-backdrop="static" data-keyboard="false">Active</button>
+                            </div>
+                    </td>
+                   
+                  
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

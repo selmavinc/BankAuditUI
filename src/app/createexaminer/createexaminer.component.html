@@ -1,0 +1,166 @@
+
+    <!-- <div class="form-outline mb-4">
+    <h2 id="LoginHeading"> Login</h2>
+  </div> -->
+  <form [formGroup]="addNewForm" novalidate>
+    <div class="container">
+      <!-- <div class="border border-secondary"> -->
+        <div class="row">
+          <div class="col-md-3">
+
+          </div>
+          <div class="col-md-6 border" style="padding-top: 3%;border-radius: 5px;background-color: lightsteelblue;">
+            <div class="row">
+              <!-- <div class="col-md-4"></div> -->
+              <div class="col text-center">
+                <h2 id="AddnewExaminerHeading" style="font-weight: bold;text-align: center;font-family: initial;color: steelblue;"> ADD EXAMINER</h2>
+                <!-- <h2 id="AddnewExaminerHeading" style="font-weight: bold;text-align: center;font-family: initial;color: steelblue;"> EXAMINER</h2> -->
+              </div>
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+            <br/>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+              <div class="col-md-3">
+                <label class="form-label" style="font-weight: bold;" for="form2Example2">Name</label>
+
+              </div>
+              <div class="col-md-7">
+               
+                <input type="text" id="Name" class="form-control" formControlName="name" [(ngModel)]="examiner.Name"  />
+                 
+              </div>
+              <div class="col-md-1">
+                <div *ngIf="addNewForm.controls['name'].invalid && !isValidFormSubmitted">
+                    <!-- <br/> -->
+                    <div *ngIf="addNewForm.controls['name'].errors?.['required']" style="color: red;font-size: large;">
+                    *
+                    </div>         
+                </div>
+              </div>
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+            <br/>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <label class="form-label" style="font-weight: bold;" for="form2Example2">Username</label>
+    
+                  </div>
+              <div class="col-md-7">
+                <input type="text" id="userName" class="form-control" formControlName="username" [(ngModel)]="examiner.Username" />
+                <div *ngIf="addNewForm.controls['username'].invalid && !isValidFormSubmitted">
+                    <div *ngIf="addNewForm.controls['username'].errors?.['minlength']"  style="color: red;">
+                        Username must be at least 4 characters long.
+                      </div>
+                  </div>
+  
+               
+              </div>
+              <div class="col-md-1">
+                <div *ngIf="addNewForm.controls['username'].invalid && !isValidFormSubmitted">
+                    <!-- <br/> -->
+                    <div *ngIf="addNewForm.controls['username'].errors?.['required']" style="color: red;font-size: large;">
+                    *
+                    </div>
+                  </div>
+              </div>
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+
+            <br/>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <label class="form-label" style="font-weight: bold;" for="form2Example2">Password</label>
+    
+                  </div>
+                <div class="col-md-7">
+                  <input type="password" id="password" class="form-control" formControlName="PassWord"  />
+                  <div *ngIf="addNewForm.controls['PassWord'].invalid && !isValidFormSubmitted">
+                    <div *ngIf="addNewForm.controls['PassWord'].errors?.['minlength']"  style="color: red;">
+                        Password must have 5 chars and does not exceed 15 chars
+                      </div>
+                      <div *ngIf="addNewForm.controls['PassWord'].errors?.['maxlength']"  style="color: red;">
+                        Does not exceed 15 chars
+                      </div>
+                  </div>
+    
+                  
+                </div>
+                <div class="col-md-1">
+                    <div *ngIf="addNewForm.controls['PassWord'].invalid && !isValidFormSubmitted">
+                        <!-- <br/> -->
+                        <div *ngIf="addNewForm.controls['PassWord'].errors?.['required']" style="color: red;font-size: large;">
+                        *
+                        </div>
+                      </div>
+                </div>
+                <!-- <div class="col-md-4"></div> -->
+  
+              </div>
+              <br/>
+              <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-3">
+                      <label class="form-label" style="font-weight: bold;" for="form2Example2">Confirm Password</label>
+      
+                    </div>
+                  <div class="col-md-7">
+                    <input type="password" id="newpassword" class="form-control" formControlName="newPassWord" [(ngModel)]="examiner.Password"  />
+                    <div *ngIf="addNewForm.controls['newPassWord'].invalid && !isValidFormSubmitted">
+                        <div *ngIf="addNewForm.controls['newPassWord'].errors?.['minlength']"  style="color: red;">
+                            Password must have 5 chars and does not exceed 15 chars
+                          </div>
+                          <div *ngIf="addNewForm.controls['newPassWord'].errors?.['maxlength']"  style="color: red;">
+                            Does not exceed 15 chars
+                          </div>
+                          <div *ngIf="addNewForm.controls['newPassWord'].errors?.['confirmedValidator']" style="color: red;">
+                              Password and Confirm Password must be match.
+                        </div>
+                      </div>
+      
+                   
+                  </div>
+                  <div class="col-md-1">
+                    <div *ngIf="addNewForm.controls['newPassWord'].invalid && !isValidFormSubmitted">
+                        <!-- <br/> -->
+                        <div *ngIf="addNewForm.controls['newPassWord'].errors?.['required']" style="color: red;font-size: large;">
+                        *
+                        </div>
+                      </div>
+                  </div>
+                  <!-- <div class="col-md-4"></div> -->
+    
+                </div>
+
+            <div class="row">
+              <!-- <div class="col-md-4"></div> -->
+              <div class="col text-center">
+                <button type="button" style="margin-top: 15px;font-weight: bold;" class="btn btn-secondary btn-block mb-4" (click)="OnSubmit()">Submit</button>
+              </div>
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+            
+          </div>
+          <div class="col-md-3">
+            
+          </div>
+        </div>
+      
+ 
+
+
+    </div>
+  
+  </form>
+      
+      
+    
+    

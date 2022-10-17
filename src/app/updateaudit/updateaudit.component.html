@@ -1,0 +1,203 @@
+
+    <!-- <div class="form-outline mb-4">
+    <h2 id="LoginHeading"> Login</h2>
+  </div> -->
+  <form [formGroup]="updateNewForm" novalidate>
+    <div class="container">
+      <!-- <div class="border border-secondary"> -->
+        <div class="row">
+          <div class="col-md-3">
+
+          </div>
+          <div class="col-md-6 border" style="padding-top: 3%;border-radius: 5px;background-color: lightsteelblue;">
+            <div class="row">
+              <!-- <div class="col-md-4"></div> -->
+              <div class="col text-center">
+                <h2 id="AddnewExaminerHeading" style="font-weight: bold;text-align: center;font-family: initial;color: steelblue;"> MODIFY AUDIT</h2>
+                <!-- <h2 id="AddnewExaminerHeading" style="font-weight: bold;text-align: center;font-family: initial;color: steelblue;"> EXAMINER</h2> -->
+              </div>
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+            <br/>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+              <div class="col-md-3">
+                <label class="form-label" style="font-weight: bold;" for="form2Example2">Branch</label>
+
+              </div>
+              <div class="col-md-7">
+               
+                <input type="text" id="branch" class="form-control" formControlName="branch" [(ngModel)]="auditexaminer.branchId"  />
+                 
+              </div>
+              <div class="col-md-1">
+                <div *ngIf="updateNewForm.controls['branch'].invalid && !isValidFormSubmitted">
+                    <!-- <br/> -->
+                    <div *ngIf="updateNewForm.controls['branch'].errors?.['required']" style="color: red;font-size: large;">
+                    *
+                    </div>         
+                </div>
+              </div>
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+            <br/>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <label class="form-label" style="font-weight: bold;" for="form2Example2">Lead Examiner</label>
+    
+                  </div>
+              <div class="col-md-7">
+                <select class="form-control" #lexaminer (change)="onSelected(lexaminer.value)"  formControlName="leadExaminer" [(ngModel)]="auditexaminer.leadExaminerId"> 
+                    <option [ngValue]="null">--Select--</option>  
+                      <option *ngFor="let LExaminers of LeadExaminers" value={{LExaminers.examinerId}}>                
+                        {{LExaminers.name}}  
+                      </option>
+                  </select>
+  
+               
+              </div>
+              <div class="col-md-1">
+                <div *ngIf="updateNewForm.controls['leadExaminer'].invalid && !isValidFormSubmitted">
+                    <!-- <br/> -->
+                    <div *ngIf="updateNewForm.controls['leadExaminer'].errors?.['required']" style="color: red;font-size: large;">
+                    *
+                    </div>
+                  </div>
+              </div>
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+
+            <br/>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <label class="form-label" style="font-weight: bold;" for="form2Example2">Associate Examiner</label>
+    
+                  </div>
+              <div class="col-md-7">
+                <select class="form-control" #aexaminer (change)="onassocSelected(aexaminer.value)" formControlName="assocExaminer" [(ngModel)]="auditexaminer.associateExaminerId"> 
+                    <option [ngValue]="null">--Select--</option>  
+                      <option *ngFor="let LExaminers of LeadExaminers" value={{LExaminers.examinerId}}>                
+                        {{LExaminers.name}}  
+                      </option>
+                  </select>
+  
+               
+              </div>
+              <!-- <div class="col-md-1">
+                <div *ngIf="updateNewForm.controls['assocExaminer'].invalid && !isValidFormSubmitted">
+                   
+                    <div *ngIf="updateNewForm.controls['assocExaminer'].errors?.['required']" style="color: red;font-size: large;">
+                    *
+                    </div>
+                  </div>
+              </div> -->
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+
+            <br/>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <label class="form-label" style="font-weight: bold;" for="form2Example2">Audit Date</label>
+    
+                  </div>
+                <div class="col-md-7">
+                  <input type="date" id="auditdate" class="form-control" formControlName="auditDate"  [(ngModel)]="auditexaminer.auditDate"/>
+    
+                  
+                </div>
+                <div class="col-md-1">
+                    <div *ngIf="updateNewForm.controls['auditDate'].invalid && !isValidFormSubmitted">
+                        <!-- <br/> -->
+                        <div *ngIf="updateNewForm.controls['auditDate'].errors?.['required']" style="color: red;font-size: large;">
+                        *
+                        </div>
+                      </div>
+                </div>
+                <!-- <div class="col-md-4"></div> -->
+  
+              </div>
+              <br/>
+              <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-3">
+                      <label class="form-label" style="font-weight: bold;" for="form2Example2">Audit Hour</label>
+      
+                    </div>
+                  <div class="col-md-7">
+                    <input type="text" id="audithour" class="form-control" formControlName="audithour" [(ngModel)]="auditexaminer.auditHours"  />
+      
+                   
+                  </div>
+                  <div class="col-md-1">
+                    <div *ngIf="updateNewForm.controls['audithour'].invalid && !isValidFormSubmitted">
+                        <!-- <br/> -->
+                        <div *ngIf="updateNewForm.controls['audithour'].errors?.['required']" style="color: red;font-size: large;">
+                        *
+                        </div>
+                      </div>
+                  </div>
+                  <!-- <div class="col-md-4"></div> -->
+    
+                </div>
+
+                <br/>
+              <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-3">
+                      <label class="form-label" style="font-weight: bold;" for="form2Example2">Status</label>
+      
+                    </div>
+                  <div class="col-md-7">
+                    <select class="form-control" #statuses (change)="onauditSelected(statuses.value)"  formControlName="status" [(ngModel)]="auditexaminer.auditStatusId"> 
+                        <option value="">--Select--</option>  
+                          <option *ngFor="let auditstat of AuditsStatuses" value={{auditstat.auditStatusId}}>                
+                            {{auditstat.name}}  
+                          </option>
+                      </select>
+      
+                   
+                  </div>
+                  <div class="col-md-1">
+                    <div *ngIf="updateNewForm.controls['status'].invalid && !isValidFormSubmitted">
+                        <!-- <br/> -->
+                        <div *ngIf="updateNewForm.controls['status'].errors?.['required']" style="color: red;font-size: large;">
+                        *
+                        </div>
+                      </div>
+                  </div>
+                  <!-- <div class="col-md-4"></div> -->
+    
+                </div>
+
+
+            <div class="row">
+              <!-- <div class="col-md-4"></div> -->
+              <div class="col text-center">
+                <button type="button" style="margin-top: 15px;font-weight: bold;" class="btn btn-secondary btn-block mb-4" (click)="OnUpdate()">Update</button>
+              </div>
+              <!-- <div class="col-md-4"></div> -->
+
+            </div>
+            
+          </div>
+          <div class="col-md-3">
+            
+          </div>
+        </div>
+      
+ 
+
+
+    </div>
+  
+  </form>

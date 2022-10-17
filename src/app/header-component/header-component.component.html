@@ -1,0 +1,74 @@
+<!-- <nav class="navbar navbar-dark bg-primary" style="background-color: #8f91d5 !important;"> -->
+    
+
+    <!-- <div> -->
+    <!-- <form class="form-inline my-2 my-lg-0"> -->
+        <!-- <button type="button" class="btn btn-secondary">Signin</button> -->
+
+        <!-- <button type="button" class="btn btn-primary float-right m-2" (click)="openSignInModal()">Signin</button>
+        <button type="button" class="btn btn-primary float-right m-2" (click)="openModal()">Signup</button> -->
+          
+         <div class="row" *ngIf="showSignInSignUp" class="navbar navbar-dark bg-primary" style="background-color: #2f3299 !important;">
+           <div class="col-md-11">
+
+            <div class="row">
+              
+               <div class="col">
+                <h1 class="navbar-brand mb-0" style="font-weight: bold;color: #f4f7e8;font-family: auto;font-size: xx-large;">BANK AUDIT</h1>
+               </div>
+             </div>
+
+            
+            
+           </div>
+           <div class="col-md-1">
+             <div class="row">
+              <div class="col text-center">
+                <a class="btn btn-outline-info"  routerLink="/signin" >Sign In</a>
+               </div>
+             </div>
+           </div>
+         </div>
+
+         <div class="row"  *ngIf="!showSignInSignUp" class="navbar navbar-dark bg-primary" style="background-color: #2f3299 !important;">
+          <div class="col-md-7">
+            <div class="row">
+              
+              <div class="col">
+               <h1 class="navbar-brand mb-0" style="font-weight: bold;color: #f4f7e8;font-family: auto;font-size: xx-large;">BANK AUDIT</h1>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="row">
+              <div class="col text-center">
+                <h5 class="btn btn-default" style="color: skyblue;">Admin</h5>
+              </div>
+             <div class="col text-center">
+              <a class="btn btn-outline-info"  routerLink="/examiner"  >Examiners</a>
+            </div>
+            <div class="col text-center">
+              <a class="btn btn-outline-info"  routerLink="/userhome"  >Audit</a>
+            </div>
+             <div class="col text-center">
+               <a class="btn btn-outline-info"  (click)="signOutClick()" >Sign Out</a>
+             </div>
+             
+            </div>
+          </div>
+        </div>
+        
+        
+       
+        <!-- <a class="btn btn-secondary float-right m-2"  routerLink="/userhome" >Home</a> -->
+       
+      <!-- </form> -->
+    <!-- </div> -->
+    
+
+ 
+
+ <!-- </nav> -->
+
+ <br/><br/>
+ <router-outlet></router-outlet>
