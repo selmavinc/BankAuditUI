@@ -87,7 +87,7 @@ describe('SigninComponent', () => {
     expect(component).toBeTruthy();
   });
   it('empty username',() => {
-    debugger;
+    
     expect(component.usernameC).toBe('');
     page.submitButton.click();
     fixture.detectChanges();
@@ -95,7 +95,7 @@ describe('SigninComponent', () => {
     // expect(page.errorMsg.textContent).toBe(component.isValidFormSubmitted);
   });
   it('empty password',() => {
-    debugger;
+    
     page.updateValue(page.usernameInput,'abc');
     expect(component.usernameC).toBe('abc');
     expect(component.passwordC).toBe('');
@@ -156,7 +156,7 @@ describe('SigninComponent', () => {
     fakeAsync(() => {
      fixture.detectChanges(); 
     spyOn(component,'login');
-    debugger;
+    
     page.updateValue(page.usernameInput,'abc');
     page.updateValue(page.passwordInput,'321');
     (auditserv.Login as jasmine.Spy).and.returnValue(
@@ -174,7 +174,7 @@ it('Login Failed',
 fakeAsync(() => {
  fixture.detectChanges(); 
 spyOn(component,'login');
-debugger;
+
 page.updateValue(page.usernameInput,'abc');
 page.updateValue(page.passwordInput,'abc');
 (auditserv.Login as jasmine.Spy).and.rejectWith(
