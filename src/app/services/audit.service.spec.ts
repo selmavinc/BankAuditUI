@@ -116,5 +116,14 @@ describe('Audit service', () => {
           });
           tick();
     }));
+
+    it('refresh api success',fakeAsync(() => {
+        debugger;
+        const testData=true;
+        auditService.notifyOther({refresh: testData});
+        // console.log(auditService.notify.value.refresh);
+        expect(auditService.notify.value.refresh).toEqual(testData);
+          tick();
+    }));
  
   });
